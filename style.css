@@ -1,0 +1,13 @@
+.container {
+  display: grid;
+  background-color: powderblue;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 3px;
+}
+
+.card {
+  height: 240px;
+  width: 160px;
+  background-color: firebrick;
+}
