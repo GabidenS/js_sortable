@@ -1,27 +1,46 @@
-'use strict'
+'use strict';
 
-console.log('hello')
-let allDataObject
+console.log('hello');
+let allDataObject;
+const conatinerElement = document.querySelector('.container');
 
 const all = fetch(
   'https://rawcdn.githack.com/akabab/superhero-api/0.2.0/api/all.json'
 )
   .then((response) => response.json()) // parse the response from JSON
   .then((data) => {
-    allDataObject = data
-    console.log(allDataObject[1].images.sm)
-    addImage(allDataObject)
-  })
-const conatinerElement = document.querySelector('.container')
+    allDataObject = data;
+    console.log(allDataObject[1].images.md);
+    addImage(allDataObject);
+  });
 
 const addImage = function (objectData) {
-  for (let i = 0; i < 100; i++) {
-    const imageLink = objectData[i].images.sm
-    const newCard = document.createElement('img')
-    newCard.classList.add('card')
-    newCard.src = imageLink
-    conatinerElement.appendChild(newCard)
-  }
-}
+  for (let i = 0; i < 2; i++) {
+    const imageLink = objectData[i].images.md;
+    const newCard = document.createElement('img');
+    newCard.classList.add('card', `img-${i}`);
+    newCard.src = imageLink;
+    conatinerElement.appendChild(newCard);
+    document.querySelector(`.img-${i}`).addEventListener('click', function () {
+      const x = document.querySelector(`.img-${i}`).getBoundingClientRect().x;
+      const y = document.querySelector(`.img-${i}`).getBoundingClientRect().y;
+      const width = document.querySelector(`.img-${i}`).getBoundingClientRect()
+        .width;
+      const height = document.querySelector(`.img-${i}`).getBoundingClientRect()
+        .height;
+      console.log(document.querySelector(`.img-${i}`).getBoundingClientRect());
+      let overlay = document.querySelector('.overlay');
 
-// conatinerElement.style.gridTemplateColumns = 'repeat(5, 1fr)'
+      overlay.style.left = x + 'px';
+      overlay.style.top = y + 'px';
+      overlay.style.height = height + 'px';
+      overlay.style.width = width + 'px';
+    });
+  }
+};
+
+const addOverlay = function () {
+  const newDiv = document.createElement('div');
+  newDiv.classList.add('overlay');
+  document.body.appendChild(newDiv);
+};
