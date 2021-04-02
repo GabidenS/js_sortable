@@ -35,11 +35,11 @@
   grid-row: 1/-1;
   background-color: yellow;
 }
-/* .overlay--on {
+.overlay--on {
   position: fixed;
   z-index: 2;
-  background-color: rgba(0, 0, 0, 0.5);
-  transition: 1s;
-} */ */
+  background-color: rgba(255, 255, 255, 0.5);
+  /* transition: 0.2s; */
+} 
 /* .overlay--on:hover {
 }
