@@ -15,27 +15,41 @@ const all = fetch(
   });
 
 const addImage = function (objectData) {
-  for (let i = 0; i < 200; i++) {
+  for (let i = 0; i < 100; i++) {
     const imageLink = objectData[i].images.md;
-    const newCard = document.createElement('img');
-    newCard.classList.add('card', `img-${i}`);
-    newCard.src = imageLink;
-    conatinerElement.appendChild(newCard);
-    document.querySelector(`.img-${i}`).addEventListener('click', function () {
-      const x = document.querySelector(`.img-${i}`).getBoundingClientRect().x;
-      const y = document.querySelector(`.img-${i}`).getBoundingClientRect().y;
-      activeCard = i;
-      const width = document.querySelector(`.img-${i}`).getBoundingClientRect()
-        .width;
-      const height = document.querySelector(`.img-${i}`).getBoundingClientRect()
-        .height;
-      console.log(document.querySelector(`.img-${i}`).getBoundingClientRect());
-      let overlay = document.querySelector('.overlay');
+    const newCard = document.createElement('div');
+    const newImg = document.createElement('img');
+    const overlay = document.createElement('div');
+    overlay.classList.add('overlay');
+    newCard.classList.add(`card-${i}`, 'divCard');
+    newImg.classList.add('imgCard', `img-${i}`);
+    newImg.src = imageLink;
+    newCard.appendChild(overlay);
+    newCard.appendChild(newImg);
 
-      overlay.style.left = x + 'px';
-      overlay.style.top = y + 'px';
-      overlay.style.height = height + 'px';
-      overlay.style.width = width + 'px';
+    conatinerElement.appendChild(newCard);
+
+    document.querySelector(`.img-${i}`).addEventListener('click', function () {
+      //   const card = document.querySelector(`.card-${i}`);
+      //   const overlay = document.createElement('div');
+      //   overlay.classList.add('overlay');
+
+      //   card.appendChild(overlay);
+
+      //   const x = document.querySelector(`.img-${i}`).getBoundingClientRect().x;
+      //   const y = document.querySelector(`.img-${i}`).getBoundingClientRect().y;
+      //   activeCard = i;
+      //   const width = document.querySelector(`.img-${i}`).getBoundingClientRect()
+      //     .width;
+      //   const height = document.querySelector(`.img-${i}`).getBoundingClientRect()
+      //     .height;
+      //   console.log(document.querySelector(`.img-${i}`).getBoundingClientRect());
+      //   let overlay = document.querySelector('.overlay');
+
+      //   overlay.style.left = x + 'px';
+      //   overlay.style.top = y + 'px';
+      //   overlay.style.height = height + 'px';
+      //   overlay.style.width = width + 'px';
 
       overlay.classList.add('overlay--on');
     });
