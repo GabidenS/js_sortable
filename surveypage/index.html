@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Permission application</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bodycontainer">
+      <form action="submit">
+        <div class="personaldetails">
+          <h3>Personal Details</h3>
+          <div class="name">
+            <label for="fname">Enter your name:</label>
+            <input type="text" placeholder="Name" id="fname" />
+          </div>
+          <div class="address">
+            <label for="address">Enter your address:</label>
+            <input type="text" placeholder="Address" id="address" />
+          </div>
+          <div class="mail">
+            <label for="e-mail">Enter your e-mail:</label>
+            <input type="text" placeholder="e-mail" id="e-mail" />
+          </div>
+          <div class="phone">
+            <label for="phone">Enter your phone number:</label>
+            <input type="text" placeholder="Phone" id="phone" />
+          </div>
+          <div class="iq">
+            <label for="iq">Enter your IQ level:</label>
+            <input type="text" placeholder="IQ" id="iq" />
+          </div>
+          <div class="gender">
+            <p>Your Gender</p>
+            <input type="radio" name="gender" id="male" />
+            <label for="male">Male</label><br />
+            <input type="radio" name="gender" id="female" />
+            <label for="female">Female</label><br />
+            <input type="radio" name="gender" id="other" />
+            <label for="other">Other</label><br />
+          </div>
+          <div class="dategoout">
+            <label for="dateout">Date of proposed Outing:</label>
+            <input type="date" name="dateout" id="dateout" />
+          </div>
+        </div>
+        <div class="checkboxes">
+          <h3>Check all that Apply</h3>
+          <input type="checkbox" name="checkboxes" id="checkboxes" />
+          <label for="checkboxes">I have tattoos and/or piercings</label> <br />
+          <input type="checkbox" name="checkboxes" id="checkboxes" />
+          <label for="checkboxes"
+            >I am more than 2 years older than my daughter</label
+          >
+          <br />
+          <input type="checkbox" name="checkboxes" id="checkboxes" />
+          <label for="checkboxes">I own a panel van or V8 ute</label> <br />
+          <input type="checkbox" name="checkboxes" id="checkboxes" />
+          <label for="checkboxes">I work full-time</label> <br />
+          <input type="checkbox" name="checkboxes" id="checkboxes" />
+          <label for="checkboxes">My parents are rich</label> <br />
+          <input type="checkbox" name="checkboxes" id="checkboxes" />
+          <label for="checkboxes"
+            >Is the date at a well lit public location</label
+          >
+          <br />
+        </div>
+        <div class="political">
+          <label for="party">Political Persuasion:</label>
+          <select id="party" name="party">
+            <option value="volvo">Left Wing</option>
+            <option value="saab">Right Wing</option>
+            <option value="fiat">Republican</option>
+            <option value="audi">Nazi</option></select
+          ><br />
+          <label for="education">Education level:</label>
+          <select id="education" name="education">
+            <option value="volvo">University</option>
+            <option value="saab">High School</option>
+            <option value="fiat">College</option>
+            <option value="audi">None</option></select
+          ><br />
+        </div>
+        <div class="essay">
+          <h3>Essay Section</h3>
+          <h4>In 50 words or more explain why you want to date my daughter</h4>
+          <textarea
+            name="essay"
+            id=""
+            cols="30"
+            rows="10"
+            placeholder="Enter text here"
+          ></textarea>
+          <h4>Please upload contact details for 2 references</h4>
+          <textarea
+            name="essay"
+            id=""
+            cols="30"
+            rows="5"
+            placeholder="Enter text here"
+          ></textarea
+          ><br />
+          <label for="fileupload"
+            >Upload Police Clearance Certificate, Bank Statement and Medical
+            Certifiates here:
+          </label>
+          <input type="file" name="fileupload" id="fileupload" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
